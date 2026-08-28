@@ -1,1 +1,235 @@
 //thống kê
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>WorkTime - Thống kê</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <header class="simple-header">
+
+        <div>
+
+            <h1>📊 Thống kê</h1>
+
+            <p>
+                Theo dõi công việc và thu nhập
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main class="main">
+
+        <section class="month-card">
+
+            <button id="prevMonth">
+                ‹
+            </button>
+
+
+            <strong id="currentMonth">
+                Tháng
+            </strong>
+
+
+            <button id="nextMonth">
+                ›
+            </button>
+
+        </section>
+
+
+        <section class="statistics-grid">
+
+            <div class="statistics-card">
+
+                <span>📅</span>
+
+                <p>
+                    Ngày làm
+                </p>
+
+                <strong id="monthDays">
+                    0 ngày
+                </strong>
+
+            </div>
+
+
+            <div class="statistics-card">
+
+                <span>⏱️</span>
+
+                <p>
+                    Tổng giờ
+                </p>
+
+                <strong id="monthHours">
+                    0 giờ
+                </strong>
+
+            </div>
+
+
+            <div class="statistics-card">
+
+                <span>💰</span>
+
+                <p>
+                    Lương
+                </p>
+
+                <strong id="monthSalary">
+                    0đ
+                </strong>
+
+            </div>
+
+
+            <div class="statistics-card">
+
+                <span>📈</span>
+
+                <p>
+                    Thu nhập
+                </p>
+
+                <strong id="monthIncome">
+                    0đ
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <section class="info-card">
+
+            <h3>
+                💰 Chi tiết thu nhập
+            </h3>
+
+
+            <div class="info-row">
+
+                <span>
+                    Lương
+                </span>
+
+                <strong id="salaryMonth">
+                    0đ
+                </strong>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <span>
+                    Thưởng / hoa hồng
+                </span>
+
+                <strong>
+                    0đ
+                </strong>
+
+            </div>
+
+
+            <div class="info-row total-row">
+
+                <span>
+                    Tổng thu nhập
+                </span>
+
+                <strong id="totalIncomeMonth">
+                    0đ
+                </strong>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <nav class="bottom-nav">
+
+        <a
+            href="index.html"
+            class="nav-item"
+        >
+            <span>🏠</span>
+            <small>Trang chủ</small>
+        </a>
+
+
+        <a
+            href="attendance.html"
+            class="nav-item"
+        >
+            <span>📅</span>
+            <small>Chấm công</small>
+        </a>
+
+
+        <a
+            href="calendar.html"
+            class="nav-item"
+        >
+            <span>🗓️</span>
+            <small>Lịch</small>
+        </a>
+
+
+        <a
+            href="statistics.html"
+            class="nav-item active"
+        >
+            <span>📊</span>
+            <small>Thống kê</small>
+        </a>
+
+
+        <a
+            href="settings.html"
+            class="nav-item"
+        >
+            <span>⚙️</span>
+            <small>Cài đặt</small>
+        </a>
+
+    </nav>
+
+</div>
+
+
+<script src="js/app.js"></script>
+
+<script src="js/statistics.js"></script>
+
+</body>
+
+</html>
