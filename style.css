@@ -1360,3 +1360,50 @@ select {
     }
 
 }
+
+/* ==========================
+   WORKING TIMER
+========================== */
+
+.working-timer {
+
+    margin-bottom: 15px;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: #eef2ff;
+
+    text-align: center;
+
+}
+
+
+.working-timer span {
+
+    display: block;
+
+    color: #666;
+
+    font-size: 12px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.working-timer strong {
+
+    display: block;
+
+    font-size: 32px;
+
+    letter-spacing: 2px;
+
+    color: #4f46e5;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
