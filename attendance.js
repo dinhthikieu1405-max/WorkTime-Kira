@@ -1,6 +1,45 @@
 let isWorking = false;
-
 let startTime = null;
+
+
+/* ==============================
+   LOAD CA ĐANG LÀM
+============================== */
+
+function loadActiveShift() {
+
+    const saved =
+        localStorage.getItem("activeShift");
+
+
+    if (saved) {
+
+        try {
+
+            const activeShift =
+                JSON.parse(saved);
+
+
+            isWorking = true;
+
+            startTime =
+                new Date(
+                    activeShift.startTime
+                );
+
+        }
+
+        catch (error) {
+
+            localStorage.removeItem(
+                "activeShift"
+            );
+
+        }
+
+    }
+
+}
 
 
 /* ==============================
@@ -24,18 +63,40 @@ function updateAttendanceDate() {
 
 
 /* ==============================
-   START / END SHIFT
+   BẮT ĐẦU / KẾT THÚC CA
 ============================== */
 
 function toggleAttendance() {
 
-    /* BẮT ĐẦU */
+
+    /* ==========================
+       BẮT ĐẦU CA
+    ========================== */
 
     if (!isWorking) {
 
         isWorking = true;
 
         startTime = new Date();
+
+
+        /*
+           Lưu ca đang làm
+           để thoát app vẫn còn
+        */
+
+        localStorage.setItem(
+
+            "activeShift",
+
+            JSON.stringify({
+
+                startTime:
+                    startTime.toISOString()
+
+            })
+
+        );
 
 
         updateAttendanceUI();
@@ -45,7 +106,9 @@ function toggleAttendance() {
     }
 
 
-    /* KẾT THÚC */
+    /* ==========================
+       KẾT THÚC CA
+    ========================== */
 
     const endTime =
         new Date();
@@ -116,12 +179,16 @@ function toggleAttendance() {
 
     record.totalHours =
         record.shifts.reduce(
+
             (total, shift) =>
+
                 total +
                 Number(
                     shift.hours
                 ),
+
             0
+
         );
 
 
@@ -132,6 +199,15 @@ function toggleAttendance() {
 
 
     saveData();
+
+
+    /*
+       XÓA CA ĐANG LÀM
+    */
+
+    localStorage.removeItem(
+        "activeShift"
+    );
 
 
     isWorking = false;
@@ -145,16 +221,20 @@ function toggleAttendance() {
 
 
     alert(
+
         "Đã kết thúc ca!\n\n" +
+
         "Thời gian: " +
+
         formatHours(hours)
+
     );
 
 }
 
 
 /* ==============================
-   UI
+   HIỂN THỊ TRẠNG THÁI
 ============================== */
 
 function updateAttendanceUI() {
@@ -243,7 +323,7 @@ function updateAttendanceUI() {
 
 
 /* ==============================
-   RENDER TODAY
+   HIỂN THỊ CÁC CA HÔM NAY
 ============================== */
 
 function renderToday() {
@@ -270,18 +350,20 @@ function renderToday() {
         !record.shifts.length
     ) {
 
-        list.innerHTML =
-            `
+        list.innerHTML = `
+
             <p class="empty-text">
                 Chưa có ca làm việc
             </p>
-            `;
+
+        `;
 
     }
 
     else {
 
         record.shifts.forEach(
+
             (shift, index) => {
 
                 const item =
@@ -336,8 +418,10 @@ function renderToday() {
                                 ?
 
                                 formatMoney(
+
                                     shift.hours *
                                     data.salary
+
                                 )
 
                                 :
@@ -358,6 +442,7 @@ function renderToday() {
                 );
 
             }
+
         );
 
     }
@@ -383,36 +468,32 @@ function renderToday() {
         "todaySalary"
     ).textContent =
         formatMoney(
+
             calculateDaySalary(
                 dateKey
             )
+
         );
 
 }
 
 
 /* ==============================
-   INIT
+   KHỞI ĐỘNG
 ============================== */
 
-if (
-    document.getElementById(
-        "attendanceBtn"
-    )
-) {
+loadActiveShift();
 
-    updateAttendanceDate();
+updateAttendanceDate();
 
-    renderToday();
+renderToday();
 
-    updateAttendanceUI();
+updateAttendanceUI();
 
 
-    document.getElementById(
-        "attendanceBtn"
-    ).addEventListener(
-        "click",
-        toggleAttendance
-    );
-
-}
+document.getElementById(
+    "attendanceBtn"
+).addEventListener(
+    "click",
+    toggleAttendance
+);
