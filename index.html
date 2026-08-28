@@ -1,298 +1,373 @@
-v           type="text"
-                    id="jobInput"
-                    placeholder="Ví dụ: Nhân viên bán hàng"
-                >
+<!DOCTYPE html>
+<html lang="vi">
 
-                <button id="saveJob" class="save-btn">
-                    💾 Lưu công việc
-                </button>
+<head>
 
-            </section>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>WorkTime - Trang chủ</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
 
 
-            <section class="setting-card">
+<body>
 
-    <h3>💰 Hình thức trả lương</h3>
+<div class="app">
 
-    <label>Hình thức làm việc</label>
+    <!-- HEADER -->
 
-    <div class="salary-type">
+    <header class="header">
 
-        <label class="radio-option">
-            <input
-                type="radio"
-                name="salaryType"
-                value="part-time"
-                id="partTime"
-                checked
+        <div>
+
+            <h1>WorkTime</h1>
+
+            <p>
+                Chấm công & quản lý thu nhập
+            </p>
+
+        </div>
+
+
+        <button
+            id="notificationBtn"
+            class="notification-btn"
+        >
+
+            🔔
+
+            <span
+                id="notificationCount"
+                class="notification-count hidden"
             >
-            <span>Part-time</span>
-        </label>
+                0
+            </span>
 
-        <label class="radio-option">
-            <input
-                type="radio"
-                name="salaryType"
-                value="full-time"
-                id="fullTime"
-            >
-            <span>Full-time</span>
-        </label>
+        </button>
 
-    </div>
+    </header>
 
 
-    <!-- LƯƠNG PART-TIME -->
+    <!-- THÔNG BÁO -->
 
-    <div id="partTimeSalary">
+    <div
+        id="notificationPanel"
+        class="notification-panel hidden"
+    >
 
-        <label>
-            Lương / giờ
-        </label>
+        <div class="notification-header">
 
-        <div class="salary-input">
+            <h3>🔔 Thông báo</h3>
 
-            <input
-                type="number"
-                id="hourSalaryInput"
-                placeholder="Ví dụ: 25000"
-            >
+            <button id="markAllRead">
+                Đánh dấu đã đọc
+            </button>
 
-            <span>đ / giờ</span>
+        </div>
+
+
+        <div id="notificationList">
+
+            <p class="empty-text">
+                Chưa có thông báo
+            </p>
 
         </div>
 
     </div>
 
 
-    <!-- LƯƠNG FULL-TIME -->
+    <!-- NỘI DUNG -->
 
-    <div id="fullTimeSalary" class="hidden">
+    <main class="main">
 
-        <label>
-            Lương / ngày
-        </label>
+        <section class="welcome">
 
-        <div class="salary-input">
+            <p>Xin chào 👋</p>
 
-            <input
-                type="number"
-                id="daySalaryInput"
-                placeholder="Ví dụ: 300000"
+            <h2>
+                Hôm nay bạn làm việc thế nào?
+            </h2>
+
+        </section>
+
+
+        <!-- NGÀY -->
+
+        <section class="date-card">
+
+            <div>
+
+                <span class="date-label">
+                    HÔM NAY
+                </span>
+
+                <h3 id="today">
+                    --/--/----
+                </h3>
+
+            </div>
+
+
+            <div class="calendar-icon">
+                📅
+            </div>
+
+        </section>
+
+
+        <!-- THỐNG KÊ HÔM NAY -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⏱️
+                </div>
+
+                <div>
+
+                    <p>Giờ hôm nay</p>
+
+                    <strong id="totalHours">
+                        0 giờ
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    💰
+                </div>
+
+                <div>
+
+                    <p>Lương hôm nay</p>
+
+                    <strong id="todaySalary">
+                        0đ
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CHẤM CÔNG -->
+
+        <section class="attendance-card">
+
+            <div class="section-title">
+
+                <div>
+
+                    <h2>Chấm công</h2>
+
+                    <p>
+                        Quản lý ca làm việc hôm nay
+                    </p>
+
+                </div>
+
+                <span>⏰</span>
+
+            </div>
+
+
+            <div class="work-status">
+
+                <div
+                    id="statusDot"
+                    class="status-dot"
+                ></div>
+
+
+                <div>
+
+                    <strong id="workStatus">
+                        Chưa bắt đầu
+                    </strong>
+
+                    <p id="workTime">
+                        Hãy bắt đầu ca làm việc
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="attendance.html"
+                class="attendance-btn"
             >
+                🟢 ĐẾN TRANG CHẤM CÔNG
+            </a>
 
-            <span>đ / ngày</span>
+        </section>
 
-        </div>
 
-    </div>
+        <!-- CÔNG VIỆC -->
 
+        <section class="job-card">
 
-    <button id="saveSalary" class="save-btn">
-        💾 Lưu thiết lập
-    </button>
+            <div class="section-title">
 
-</section>
+                <div>
 
-        </main>
+                    <h2>Công việc</h2>
 
+                    <p>
+                        Công việc hiện tại
+                    </p>
 
-        <!-- =========================
-             MENU DƯỚI
-        ========================== -->
+                </div>
 
-        <nav class="bottom-nav">
+                <span>💼</span>
 
-            <button
-                class="nav-item active"
-                data-page="homePage"
-            >
-                <span>🏠</span>
-                <small>Trang chủ</small>
-            </button>
+            </div>
 
 
-            <button
-                class="nav-item"
-                data-page="attendancePage"
-            >
-                <span>📅</span>
-                <small>Chấm công</small>
-            </button>
+            <div class="job-select">
 
+                <span>💼</span>
 
-            <button
-                class="nav-item"
-                data-page="statisticsPage"
-            >
-                <span>📊</span>
-                <small>Thống kê</small>
-            </button>
+                <div>
 
+                    <small>
+                        Công việc
+                    </small>
 
-            <button
-                class="nav-item"
-                data-page="settingsPage"
-            >
-                <span>⚙️</span>
-                <small>Cài đặt</small>
-            </button>
+                    <strong id="jobName">
+                        Chưa thiết lập
+                    </strong>
 
-        </nav>
+                </div>
 
-    </div>
+            </div>
 
+        </section>
 
-    <script src="app.js"></script>
 
-</body>
+        <!-- LIÊN KẾT NHANH -->
 
-v           type="text"
-                    id="jobInput"
-                    placeholder="Ví dụ: Nhân viên bán hàng"
-                >
+        <section class="quick-links">
 
-                <button id="saveJob" class="save-btn">
-                    💾 Lưu công việc
-                </button>
+            <a href="calendar.html">
+                🗓️ Xem lịch
+            </a>
 
-            </section>
+            <a href="statistics.html">
+                📊 Thống kê
+            </a>
 
+            <a href="settings.html">
+                ⚙️ Cài đặt
+            </a>
 
-            <section class="setting-card">
+        </section>
 
-    <h3>💰 Hình thức trả lương</h3>
+    </main>
 
-    <label>Hình thức làm việc</label>
 
-    <div class="salary-type">
+    <!-- MENU -->
 
-        <label class="radio-option">
-            <input
-                type="radio"
-                name="salaryType"
-                value="part-time"
-                id="partTime"
-                checked
-            >
-            <span>Part-time</span>
-        </label>
+    <nav class="bottom-nav">
 
-        <label class="radio-option">
-            <input
-                type="radio"
-                name="salaryType"
-                value="full-time"
-                id="fullTime"
-            >
-            <span>Full-time</span>
-        </label>
+        <a
+            href="index.html"
+            class="nav-item active"
+        >
 
-    </div>
+            <span>🏠</span>
 
+            <small>
+                Trang chủ
+            </small>
 
-    <!-- LƯƠNG PART-TIME -->
+        </a>
 
-    <div id="partTimeSalary">
 
-        <label>
-            Lương / giờ
-        </label>
+        <a
+            href="attendance.html"
+            class="nav-item"
+        >
 
-        <div class="salary-input">
+            <span>📅</span>
 
-            <input
-                type="number"
-                id="hourSalaryInput"
-                placeholder="Ví dụ: 25000"
-            >
+            <small>
+                Chấm công
+            </small>
 
-            <span>đ / giờ</span>
+        </a>
 
-        </div>
 
-    </div>
+        <a
+            href="calendar.html"
+            class="nav-item"
+        >
 
+            <span>🗓️</span>
 
-    <!-- LƯƠNG FULL-TIME -->
+            <small>
+                Lịch
+            </small>
 
-    <div id="fullTimeSalary" class="hidden">
+        </a>
 
-        <label>
-            Lương / ngày
-        </label>
 
-        <div class="salary-input">
+        <a
+            href="statistics.html"
+            class="nav-item"
+        >
 
-            <input
-                type="number"
-                id="daySalaryInput"
-                placeholder="Ví dụ: 300000"
-            >
+            <span>📊</span>
 
-            <span>đ / ngày</span>
+            <small>
+                Thống kê
+            </small>
 
-        </div>
+        </a>
 
-    </div>
 
+        <a
+            href="settings.html"
+            class="nav-item"
+        >
 
-    <button id="saveSalary" class="save-btn">
-        💾 Lưu thiết lập
-    </button>
+            <span>⚙️</span>
 
-</section>
+            <small>
+                Cài đặt
+            </small>
 
-        </main>
+        </a>
 
+    </nav>
 
-        <!-- =========================
-             MENU DƯỚI
-        ========================== -->
+</div>
 
-        <nav class="bottom-nav">
 
-            <button
-                class="nav-item active"
-                data-page="homePage"
-            >
-                <span>🏠</span>
-                <small>Trang chủ</small>
-            </button>
+<script src="js/app.js"></script>
 
-
-            <button
-                class="nav-item"
-                data-page="attendancePage"
-            >
-                <span>📅</span>
-                <small>Chấm công</small>
-            </button>
-
-
-            <button
-                class="nav-item"
-                data-page="statisticsPage"
-            >
-                <span>📊</span>
-                <small>Thống kê</small>
-            </button>
-
-
-            <button
-                class="nav-item"
-                data-page="settingsPage"
-            >
-                <span>⚙️</span>
-                <small>Cài đặt</small>
-            </button>
-
-        </nav>
-
-    </div>
-
-
-    <script src="app.js"></script>
+<script src="js/notification.js"></script>
 
 </body>
 
