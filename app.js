@@ -182,7 +182,18 @@ function getTodayRecord() {
 
 }
 
+const today = document.getElementById("today");
 
+const now = new Date();
+
+const options = {
+    weekday: "long",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric"
+};
+
+today.textContent = now.toLocaleDateString("vi-VN", options);
 /*INITIALIZE*/
 
 loadData();
