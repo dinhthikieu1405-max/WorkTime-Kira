@@ -1,1 +1,215 @@
 //Chấm công
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>WorkTime - Chấm công</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <header class="simple-header">
+
+        <div>
+
+            <h1>📅 Chấm công</h1>
+
+            <p>
+                Quản lý ca làm việc
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main class="main">
+
+        <div class="page-title">
+
+            <h2>Ca hôm nay</h2>
+
+            <p id="attendanceDate">
+                --/--/----
+            </p>
+
+        </div>
+
+
+        <section class="attendance-card">
+
+            <div class="work-status">
+
+                <div
+                    id="statusDot"
+                    class="status-dot"
+                ></div>
+
+
+                <div>
+
+                    <strong id="attendanceStatus">
+                        Chưa bắt đầu
+                    </strong>
+
+                    <p id="attendanceTime">
+                        Chưa có ca làm việc
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="attendanceBtn"
+                class="attendance-btn"
+            >
+                🟢 BẮT ĐẦU CA
+            </button>
+
+        </section>
+
+
+        <section class="info-card">
+
+            <div class="section-title">
+
+                <div>
+
+                    <h3>
+                        📋 Các ca hôm nay
+                    </h3>
+
+                    <p>
+                        Bạn có thể làm nhiều ca
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="todayShiftList">
+
+                <p class="empty-text">
+                    Chưa có ca làm việc
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="info-card">
+
+            <h3>
+                📊 Tổng hôm nay
+            </h3>
+
+
+            <div class="info-row">
+
+                <span>
+                    Tổng thời gian
+                </span>
+
+                <strong id="totalHours">
+                    0 giờ
+                </strong>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <span>
+                    Lương
+                </span>
+
+                <strong id="todaySalary">
+                    0đ
+                </strong>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <nav class="bottom-nav">
+
+        <a
+            href="index.html"
+            class="nav-item"
+        >
+            <span>🏠</span>
+            <small>Trang chủ</small>
+        </a>
+
+
+        <a
+            href="attendance.html"
+            class="nav-item active"
+        >
+            <span>📅</span>
+            <small>Chấm công</small>
+        </a>
+
+
+        <a
+            href="calendar.html"
+            class="nav-item"
+        >
+            <span>🗓️</span>
+            <small>Lịch</small>
+        </a>
+
+
+        <a
+            href="statistics.html"
+            class="nav-item"
+        >
+            <span>📊</span>
+            <small>Thống kê</small>
+        </a>
+
+
+        <a
+            href="settings.html"
+            class="nav-item"
+        >
+            <span>⚙️</span>
+            <small>Cài đặt</small>
+        </a>
+
+    </nav>
+
+</div>
+
+
+<script src="js/app.js"></script>
+
+<script src="js/attendance.js"></script>
+
+</body>
+
+</html>
