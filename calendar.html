@@ -1,0 +1,189 @@
+//lịch
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>WorkTime - Lịch</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <header class="simple-header">
+
+        <div>
+
+            <h1>🗓️ Lịch chấm công</h1>
+
+            <p>
+                Xem lại ngày đã làm
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main class="main">
+
+        <section class="month-card">
+
+            <button id="prevMonth">
+                ‹
+            </button>
+
+
+            <strong id="currentMonth">
+                Tháng
+            </strong>
+
+
+            <button id="nextMonth">
+                ›
+            </button>
+
+        </section>
+
+
+        <section class="calendar-card">
+
+            <div class="weekdays">
+
+                <span>T2</span>
+                <span>T3</span>
+                <span>T4</span>
+                <span>T5</span>
+                <span>T6</span>
+                <span>T7</span>
+                <span>CN</span>
+
+            </div>
+
+
+            <div
+                id="calendarGrid"
+                class="calendar-grid"
+            ></div>
+
+
+            <div class="calendar-legend">
+
+                <span>
+
+                    <i class="dot worked"></i>
+
+                    Đã làm
+
+                </span>
+
+
+                <span>
+
+                    <i class="dot today-dot"></i>
+
+                    Hôm nay
+
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <section class="info-card">
+
+            <h3 id="selectedDayTitle">
+                Chọn một ngày
+            </h3>
+
+
+            <div id="selectedDayContent">
+
+                <p class="empty-text">
+
+                    Bấm vào một ngày để xem
+                    chi tiết.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <nav class="bottom-nav">
+
+        <a
+            href="index.html"
+            class="nav-item"
+        >
+            <span>🏠</span>
+            <small>Trang chủ</small>
+        </a>
+
+
+        <a
+            href="attendance.html"
+            class="nav-item"
+        >
+            <span>📅</span>
+            <small>Chấm công</small>
+        </a>
+
+
+        <a
+            href="calendar.html"
+            class="nav-item active"
+        >
+            <span>🗓️</span>
+            <small>Lịch</small>
+        </a>
+
+
+        <a
+            href="statistics.html"
+            class="nav-item"
+        >
+            <span>📊</span>
+            <small>Thống kê</small>
+        </a>
+
+
+        <a
+            href="settings.html"
+            class="nav-item"
+        >
+            <span>⚙️</span>
+            <small>Cài đặt</small>
+        </a>
+
+    </nav>
+
+</div>
+
+
+<script src="js/app.js"></script>
+
+<script src="js/calendar.js"></script>
+
+</body>
+
+</html>
