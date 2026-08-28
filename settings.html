@@ -1,1 +1,323 @@
 //Cai đặt
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>WorkTime - Cài đặt</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <header class="simple-header">
+
+        <div>
+
+            <h1>⚙️ Cài đặt</h1>
+
+            <p>
+                Thiết lập công việc và lương
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main class="main">
+
+
+        <!-- CÔNG VIỆC -->
+
+        <section class="setting-card">
+
+            <h3>
+                💼 Công việc
+            </h3>
+
+
+            <label>
+                Tên công việc
+            </label>
+
+
+            <input
+                type="text"
+                id="jobInput"
+                placeholder="Ví dụ: Nhân viên bán hàng"
+            >
+
+
+            <button
+                id="saveJob"
+                class="save-btn"
+            >
+                💾 Lưu công việc
+            </button>
+
+        </section>
+
+
+        <!-- LƯƠNG -->
+
+        <section class="setting-card">
+
+            <h3>
+                💰 Hình thức trả lương
+            </h3>
+
+
+            <label>
+                Hình thức làm việc
+            </label>
+
+
+            <div class="salary-type">
+
+                <label class="radio-option">
+
+                    <input
+                        type="radio"
+                        name="salaryType"
+                        value="part-time"
+                        id="partTime"
+                        checked
+                    >
+
+                    <span>
+                        Part-time
+                    </span>
+
+                </label>
+
+
+                <label class="radio-option">
+
+                    <input
+                        type="radio"
+                        name="salaryType"
+                        value="full-time"
+                        id="fullTime"
+                    >
+
+                    <span>
+                        Full-time
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <!-- PART TIME -->
+
+            <div id="partTimeSalary">
+
+                <label>
+                    Lương / giờ
+                </label>
+
+
+                <div class="salary-input">
+
+                    <input
+                        type="number"
+                        id="hourSalaryInput"
+                        placeholder="25000"
+                    >
+
+
+                    <span>
+                        đ / giờ
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- FULL TIME -->
+
+            <div
+                id="fullTimeSalary"
+                class="hidden"
+            >
+
+                <label>
+                    Lương / ngày
+                </label>
+
+
+                <div class="salary-input">
+
+                    <input
+                        type="number"
+                        id="daySalaryInput"
+                        placeholder="300000"
+                    >
+
+
+                    <span>
+                        đ / ngày
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="saveSalary"
+                class="save-btn"
+            >
+                💾 Lưu mức lương
+            </button>
+
+        </section>
+
+
+        <!-- LỊCH -->
+
+        <section class="setting-card">
+
+            <h3>
+                ⏰ Lịch làm việc
+            </h3>
+
+
+            <label>
+                Giờ bắt đầu
+            </label>
+
+
+            <input
+                type="time"
+                id="workStart"
+                value="08:00"
+            >
+
+
+            <label class="setting-label-gap">
+                Giờ kết thúc
+            </label>
+
+
+            <input
+                type="time"
+                id="workEnd"
+                value="17:00"
+            >
+
+
+            <label class="setting-label-gap">
+                Nhắc trước
+            </label>
+
+
+            <select id="reminderMinutes">
+
+                <option value="5">
+                    5 phút
+                </option>
+
+                <option value="15" selected>
+                    15 phút
+                </option>
+
+                <option value="30">
+                    30 phút
+                </option>
+
+                <option value="60">
+                    60 phút
+                </option>
+
+            </select>
+
+
+            <button
+                id="saveSchedule"
+                class="save-btn"
+            >
+                💾 Lưu lịch làm việc
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <nav class="bottom-nav">
+
+        <a
+            href="index.html"
+            class="nav-item"
+        >
+            <span>🏠</span>
+            <small>Trang chủ</small>
+        </a>
+
+
+        <a
+            href="attendance.html"
+            class="nav-item"
+        >
+            <span>📅</span>
+            <small>Chấm công</small>
+        </a>
+
+
+        <a
+            href="calendar.html"
+            class="nav-item"
+        >
+            <span>🗓️</span>
+            <small>Lịch</small>
+        </a>
+
+
+        <a
+            href="statistics.html"
+            class="nav-item"
+        >
+            <span>📊</span>
+            <small>Thống kê</small>
+        </a>
+
+
+        <a
+            href="settings.html"
+            class="nav-item active"
+        >
+            <span>⚙️</span>
+            <small>Cài đặt</small>
+        </a>
+
+    </nav>
+
+</div>
+
+
+<script src="js/app.js"></script>
+
+<script src="js/settings.js"></script>
+
+</body>
+
+</html>
