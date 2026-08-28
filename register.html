@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Đăng ký - WorkTime</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <h1>WorkTime</h1>
+        <p>Tạo tài khoản</p>
+
+        <form id="registerForm">
+
+            <input
+                type="text"
+                id="fullName"
+                placeholder="Họ và tên"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Mật khẩu"
+                required
+            >
+
+            <button type="submit">
+                Đăng ký
+            </button>
+
+        </form>
+
+        <p id="message"></p>
+
+        <p>
+            Đã có tài khoản?
+            <a href="login.html">Đăng nhập</a>
+        </p>
+
+    </div>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Cấu hình Supabase -->
+    <script src="supabase.js"></script>
+
+    <!-- Xử lý đăng ký -->
+    <script src="register.js"></script>
+
+</body>
+
+</html>
