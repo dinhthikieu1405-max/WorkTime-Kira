@@ -140,7 +140,8 @@ function renderStatistics() {
             totalSalary
         );
 
-}
+
+    }
 
 
 /* 
