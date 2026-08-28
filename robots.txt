@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dinhthikieu1405-max.github.io/WorkTime-Kira/sitemap.xml
